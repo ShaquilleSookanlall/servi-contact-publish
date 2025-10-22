@@ -111,15 +111,16 @@ class GetContactOutlook():
       with open (self.__path_files_csv_new, newline ='') as csv_file:
         csvreader = csv.DictReader(csv_file)
 
-      files = {'file_name': ('Newcontacts.csv', open(self.__path_files_csv_new, 'rb')),
-                'list_ids' : self.__list_ids}
-      response = requests.post(self.__url, headers=headers, files= files)
+      with open(self.__path_files_csv_new, 'rb') as csv_file:
+        files = {'file_name': ('Newcontacts.csv', csv_file),
+                  'list_ids' : self.__list_ids}
+        response = requests.post(self.__url, headers=headers, files= files)
 
     except:
-      files = {'file': ('contacts.csv', open(self.__path_files_csv, 'rb')),
-                'list_ids' : self.__list_ids}
-
-      response = requests.post(self.__url, headers=headers, files= files)
+      with open(self.__path_files_csv, 'rb') as csv_file:
+        files = {'file': ('contacts.csv', csv_file),
+                  'list_ids' : self.__list_ids}
+        response = requests.post(self.__url, headers=headers, files= files)
 
 
 win_service = GetContactOutlook()

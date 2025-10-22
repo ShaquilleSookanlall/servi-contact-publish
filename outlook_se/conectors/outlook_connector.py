@@ -35,7 +35,7 @@ class MSOutlook:
                   # those could probably be interpreted
                   keys = []
                   for key in contact._prop_map_get_:
-                      if isinstance(getattr(contact, key), (int, str, 'ignore')):
+                      if isinstance(getattr(contact, key), (int, str)):
                           keys.append(key)
               record = {}
               for key in keys:
