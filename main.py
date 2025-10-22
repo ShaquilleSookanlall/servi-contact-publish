@@ -26,7 +26,7 @@ class PythonContactConstant(SMWinservice):
     schedule.every(10).minutes.do(win_service.getDifferenceLists, get_contact)
     #schedule.every().days().do(win_service.getDifferenceLists, get_contact)
 
-    while 1:
+    while self.isrunning:
       schedule.run_pending()
       time.sleep(1)
 

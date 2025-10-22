@@ -133,7 +133,7 @@ class GetContactOutlook():
   def saveDataInB(self, contact):
     try:
       with open ("C:\\contacts\\info_user", 'wb') as file:
-        file.write(contact, b'\xDE\xAD\xBE\xEF')
+        pickle.dump(contact, file)
     except Exception as e:
       print(e)
 
