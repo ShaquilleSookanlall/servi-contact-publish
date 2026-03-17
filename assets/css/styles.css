@@ -39,6 +39,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -49,7 +50,7 @@ a {
 
 .container {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -229,7 +230,7 @@ a {
 }
 
 .hero-copy h1 {
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 4vw, 3.1rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin: 0.6rem 0 0.9rem;
@@ -266,7 +267,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.75rem 1.3rem;
+  padding: 0.8rem 1.5rem;
+  min-height: 44px;
   border-radius: 999px;
   border: 1px solid transparent;
   font-size: 1rem;
@@ -471,19 +473,41 @@ a {
   margin: 0 0 1.6rem;
   border: 1px solid rgba(30, 166, 58, 0.35);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  width: 100%;
 }
 
 .content-photo img {
   width: 100%;
-  height: auto;
-  max-height: 420px;
+  height: 100%;
   object-fit: cover;
-  aspect-ratio: 16 / 6;
+  object-position: center;
   display: block;
 }
 
+.content-photo-wide {
+  height: auto;
+}
+
 .content-photo-wide img {
-  aspect-ratio: 16 / 5;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-steps-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.contact-steps-layout .steps {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 900px) {
+  .contact-steps-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .card {
@@ -513,6 +537,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  justify-content: center;
 }
 
 .chip-list li {
