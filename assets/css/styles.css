@@ -3,12 +3,12 @@
   --green-soft: rgba(23, 163, 74, 0.18);
   --gold: #f59e0b;
   --gold-soft: rgba(245, 158, 11, 0.18);
-  --bg: linear-gradient(180deg, #0b0f14 0%, #0f1318 55%, #0b0f14 100%);
+  --bg: linear-gradient(180deg, #ffffff 0%, #f3f4f6 55%, #ffffff 100%);
   --bg-elevated: rgba(255, 255, 255, 0.06);
-  --bg-subtle: rgba(255, 255, 255, 0.04);
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --text: rgba(255, 255, 255, 0.92);
-  --text-muted: rgba(255, 255, 255, 0.7);
+  --bg-subtle: #ffffff;
+  --border-subtle: rgba(17, 24, 39, 0.12);
+  --text: #111827;
+  --text-muted: #6b7280;
   --error: #ff645c;
   --radius-lg: 18px;
   --radius-xl: 24px;
@@ -425,8 +425,12 @@ a {
   border: 1px solid rgba(23, 163, 74, 0.55);
   padding: 0.25rem 0.7rem;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #0b2a16;
   background: rgba(23, 163, 74, 0.18);
+}
+
+.page-home .hero .pill {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Ribbon */
@@ -906,10 +910,11 @@ a {
 
 .site-footer {
   border-top: 1px solid var(--border-subtle);
-  background: rgba(255, 255, 255, 0.03);
+  background: linear-gradient(135deg, #0b0f14 0%, #141a22 55%, #0b0f14 100%);
   padding: 2.4rem 0 2rem;
   margin-top: 2rem;
   font-size: 0.95rem;
+  color: var(--on-dark);
 }
 
 .footer-grid {
@@ -927,7 +932,7 @@ a {
 
 .footer-tagline {
   margin: 0;
-  color: var(--text-muted);
+  color: var(--on-dark-muted);
   max-width: 18rem;
 }
 
@@ -941,7 +946,7 @@ a {
 }
 
 .footer-list a {
-  color: var(--text-muted);
+  color: var(--on-dark-muted);
 }
 
 .footer-list a:hover {
@@ -950,6 +955,10 @@ a {
 
 .muted {
   color: var(--text-muted);
+}
+
+.site-footer .muted {
+  color: var(--on-dark-muted);
 }
 
 /* Motion & interaction */
@@ -1101,6 +1110,7 @@ a {
     text-align: left;
     font-weight: 500;
     box-shadow: none;
+    color: #1f2937;
   }
 
   .nav-link.is-active {
